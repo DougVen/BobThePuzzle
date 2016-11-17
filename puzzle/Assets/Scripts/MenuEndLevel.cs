@@ -4,19 +4,29 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuEndLevel : MonoBehaviour {
-    public Canvas CoinMenu, GoMenu;
+    private Canvas CoinMenu, GoMenu;
     public Text plus2;
-    public Image bronze, silver, gold;
+    private Image bronze, silver, gold;
     private bool flag = false,flag2=true;
     public int bronzetime, silvertime, goldtime;
     public Sprite vacio;
-    public float launchfx;
+    private float launchfx;
     private GameObject GameTime;
     private int WinTime;
+    public GameObject Win;
     // Use this for initialization
     void Start() {
+        launchfx = 0.3f;
         //hago invisible las monedas
-      
+        Canvas[] C = Win.GetComponentsInChildren<Canvas>();
+        CoinMenu = C[0];
+        GoMenu = C[1];
+
+        Image[] Medals = CoinMenu.GetComponentsInChildren<Image>();
+        bronze = Medals[1];
+        silver = Medals[2];
+        gold = Medals[3];
+
         bronze.enabled = false;
         silver.enabled = false;
         gold.enabled = false;
