@@ -3,9 +3,9 @@ using System.Collections;
 
 public class WarpTile : MonoBehaviour {
     private GameObject cubo;
-    public GameObject destiny;//a donde mando el cubo
-    private Vector3 playerpos;
-    private bool here = false;
+    public GameObject destinycube;//a donde mando el cubo
+    private Vector3 playerpos,destiny;
+
 
     // Use this for initialization
     void Start()
@@ -24,13 +24,14 @@ public class WarpTile : MonoBehaviour {
         //si cubo esta en winning tile que active el canvas
         if (playerpos == transform.position)
         {
-            here = true;
-        }
-
-        if (here && playerpos != transform.position)
-        {
-         //   this.transform.position = Vector3.MoveTowards(this.transform.position, inferno, 10 * Time.deltaTime);
+			Invoke("Teleport",0.3f);
         }
 
     }
+
+	void Teleport(){
+		destiny = destinycube.transform.position;
+		destiny.y += 0.5f;
+		cubo.transform.position = destiny;
+	}
 }

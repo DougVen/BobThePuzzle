@@ -7,7 +7,7 @@ public class Flecha : MonoBehaviour {
 
     // Use this for initialization
     public string direccion="hola";
-    public int Turns;
+    private int Turns;
     public Text text;
     private GameObject cubo;
     private GameObject[] Tiles;
@@ -19,7 +19,9 @@ public class Flecha : MonoBehaviour {
 
 
     void Start () {
-        cubo= GameObject.FindGameObjectWithTag("Bob");
+        Turns = int.Parse(text.text);
+
+        cubo = GameObject.FindGameObjectWithTag("Bob");
         cubopos = cubo.transform.position;
         Tiles = GameObject.FindGameObjectsWithTag("Tile");
         text.text = Turns + "";    
@@ -41,8 +43,10 @@ public class Flecha : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-  // Ok es un bool que ayuda para mover la cara de bob hacia el mismo lugar despues de un 0.25 seg de espera.
-            if (ok)
+        Turns = int.Parse(text.text);
+
+        // Ok es un bool que ayuda para mover la cara de bob hacia el mismo lugar despues de un 0.25 seg de espera.
+        if (ok)
         {
             timeLeft += Time.deltaTime;
             if (timeLeft > 0.25)
