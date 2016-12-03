@@ -45,9 +45,9 @@ public class MenuEndLevel : MonoBehaviour {
         if (flag2&&CoinMenu.enabled)
         {
             WinTime = int.Parse(GameTime.GetComponent<Text>().text.ToString());
-
+            print(WinTime);
             if (WinTime > bronzetime)
-            {
+            {   
                 bronze.sprite = vacio;
                 silver.sprite = vacio;
                 gold.sprite = vacio;

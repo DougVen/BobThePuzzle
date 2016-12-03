@@ -7,6 +7,7 @@ public class Swipe : MonoBehaviour {
     private int Turns;
     public Text text;
     public float dx, dy,high;
+
     private GameObject cubo;
     private GameObject[] Tiles;
     private Sprite front, back;
@@ -201,7 +202,7 @@ public class Swipe : MonoBehaviour {
             //swipe down
             if (currentSwipe.y < 0 && currentSwipe.x < 0 )
         {
-                Debug.Log("down swipe");
+                Debug.Log(currentSwipe.y);
                 arrangeTilePos("Abajo");
                 move("Abajo");
             }
