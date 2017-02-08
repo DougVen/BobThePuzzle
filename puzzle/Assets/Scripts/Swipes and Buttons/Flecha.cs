@@ -71,6 +71,7 @@ public class Flecha : MonoBehaviour {
             {
                 if (t.transform.position == tilepos)
                 {
+                    if(t.tag=="Tile")
                     exist = true;
    
                 }             
